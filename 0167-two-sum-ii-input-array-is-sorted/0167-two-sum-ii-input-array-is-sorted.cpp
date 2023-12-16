@@ -19,26 +19,30 @@ public:
             we have to return the two different unique indexes
       */    
       // code here 
-      
+      vector<int>ans;
       int start=0, end = numbers.size()-1;
       while(start<end)
         {
             if(numbers[start]+numbers[end]== target)
-            break;
-            
-            else if(numbers[start]+numbers[end]< target)
             {
-                start++;
+                ans.push_back(start+1); // start+1 becouse it is 1 based indexing and not 0 based 
+                ans.push_back(end+1);
+                break;
+
+            }
+            else if(numbers[start]+numbers[end]> target)
+            {
+                end--;
+                
             }
             else
             { 
-                end--;
+             start++;
             }
         }
-         vector<int>v;
-        v.push_back(start+1);
-        v.push_back(end+1);
-        return v;
+
+        return ans;
 
     }
 };
+
