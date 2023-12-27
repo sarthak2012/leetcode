@@ -11,7 +11,7 @@ class Solution{
 public:
     int getPairsCount(int arr[], int n, int k) {
         // code here
-        // 
+        // using binary search
     sort(arr, arr + n);
     int x = 0, c = 0, y, z;
     for (int i = 0; i < n - 1; i++) {
